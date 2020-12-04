@@ -1,0 +1,102 @@
+{% extends 'index.html' %}
+{% block title %} registration page
+{%endblock%}
+{% block content %}
+<head>
+  <style> body{background-image: url(https://hex-barcelona.com/wp-content/uploads/2019/11/HEX-at-KHIDI-1024x683.jpg);
+  background-size: cover;
+  }
+  </style>
+</head>
+<section>
+ <div class="container mx-auto px-4 h-full">
+    <div class="flex content-center items-center justify-center h-full">
+      <div class="w-full lg:w-4/12 px-4">
+        <div
+          class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg  border-0"
+        >
+
+         <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
+            <div class="text-white text-center mb-3 font-bold">
+              <small>Sign Up User</small>
+            </div> 
+            <form method="POST" action="{{url_for('auth.registration_page')}}">   
+            <div class="relative w-full mb-3">
+                <label
+                  class="block uppercase text-white text-xs font-bold mb-2"
+                  for="name-input"
+                  >Username</label
+                ><input
+                  id="name-input"
+                  name="name"
+                  type="text"
+                  class="px-3 py-3 placeholder-black-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full"
+                  placeholder="Username"
+                  style="transition: all 0.15s ease 0s;"
+                />
+              </div>
+              <div class="relative w-full mb-3">
+                <label
+                  class="block uppercase text-white text-xs font-bold mb-2"
+                  for="email-input"
+                  >Email</label
+                ><input
+                  id="email-input"
+                  name="email"
+                  type="email"
+                  class="px-3 py-3 placeholder-black-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full"
+                  placeholder="Email"
+                  style="transition: all 0.15s ease 0s;"
+                />
+              </div>
+              <div class="relative w-full mb-3">
+                <label
+                  class="block uppercase text-white text-xs font-bold mb-2"
+                  for="grid-password"
+                  >Password</label
+                ><input
+                  id="gird-password"
+                  name="password"
+                  type="password"
+                  class="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full"
+                  placeholder="Password"
+                  style="transition: all 0.15s ease 0s;"
+                />
+              </div>
+              <div class="relative w-full mb-3">
+                <label
+                  class="block uppercase text-white text-xs font-bold mb-2"
+                  for="favinfo-input"
+                  >Favorite Music Label/Release</label
+                ><input
+                  id="favinfo-input"
+                  name="favinfo"
+                  type="text"
+                  class="px-3 py-3 placeholder-black-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full"
+                  placeholder="Label/Release"
+                  style="transition: all 0.15s ease 0s;"
+                />
+              </div>
+              {% if error_msg != "" %}
+                <div class="text-center mt-4 text-red-700">
+                  {{ error_msg }}
+                </div>
+              {% endif %}
+
+                <div class="text-center mt-6">
+                <button
+                  class="bg-black-500 text-white active:bg-black-200 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full"
+                  type="submit"
+                  style="transition: all 0.15s ease 0s;"
+                >
+                  Register
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
