@@ -21,9 +21,13 @@ db = SQLAlchemy(app)
 
 
 from Finalapp.auth.view import auth
+from Finalapp.product.view import product
+
+
 
 from Finalapp.auth.model import User
 app.register_blueprint(auth, url_prefix="/auth")
+app.register_blueprint(product, url_prefix="/product")
 
 
 
